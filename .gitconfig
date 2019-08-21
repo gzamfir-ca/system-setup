@@ -1,0 +1,24 @@
+[user]
+	name = gzamfir-ca
+	email = gzamfir_ca@icloud.com
+[credential]
+	helper = osxkeychain
+[core]
+	editor = code --wait
+	excludesfile = /Users/george/.gitignore_global
+[diff]
+	tool = dt-code
+[difftool "dt-code"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = mt-code
+[mergetool "mt-code"]
+	cmd = code --wait $MERGED
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/george/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/george/.stCommitMsg

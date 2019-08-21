@@ -1,0 +1,57 @@
+# macOS ###################
+._*
+.apdisk
+.com.apple.timemachine.donotpresent
+.fseventsd
+.AppleDB
+.AppleDesktop
+.AppleDouble
+.DS_Store
+.DocumentRevisions-V100
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# IntelliJ ################
+.idea/**/contentModel.xml
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/dbnavigator.xml
+.idea/**/dictionaries
+.idea/**/dynamic.xml
+.idea/**/gradle.xml
+.idea/**/libraries
+.idea/**/mongoSettings.xml
+.idea/**/shelf
+.idea/**/sqlDataSources.xml
+.idea/**/tasks.xml
+.idea/**/uiDesigner.xml
+.idea/**/usage.statistics.xml
+.idea/**/workspace.xml
+
+# DB/Logs #################
+*.log
+*.sql
+*.sqlite
+
+# Packages ################
+*.7z
+*.dmg
+*.ear
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.war
+*.zip
+
+# VS Code #################
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
