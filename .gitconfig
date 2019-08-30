@@ -1,24 +1,38 @@
-[user]
-	name = gzamfir-ca
-	email = gzamfir_ca@icloud.com
-[credential]
-	helper = osxkeychain
+[alias]
+	ad="!git add -A && git commit -m "
+	am="!git add -A && git commit --amend --no-edit"
+	br="!git checkout -b "
+	cl="!git clone --verbose"
+	cm="!git commit --amend -m "
+	co="!git checkout"
+	fe="!git fetch --all && git rebase origin/master"
+	lg="!git log --oneline --graph --decorate"
+	ne="!git init && git add -A && git commit -m "
+	or="!git remote add origin"
+	pu="!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+	st="!git status --verbose"
+	tg="!git tag -a -m "
+[commit]
+	template = /Users/george/.stCommitMsg
 [core]
 	editor = code --wait
 	excludesfile = /Users/george/.gitignore_global
+[credential]
+	helper = osxkeychain
 [diff]
 	tool = dt-code
 [difftool "dt-code"]
 	cmd = code --wait --diff $LOCAL $REMOTE
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 [merge]
 	tool = mt-code
 [mergetool "mt-code"]
 	cmd = code --wait $MERGED
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
 [mergetool "sourcetree"]
 	cmd = /Users/george/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[commit]
-	template = /Users/george/.stCommitMsg
+[user]
+	name = gzamfir-ca
+	email = gzamfir_ca@icloud.com
