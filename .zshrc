@@ -73,6 +73,8 @@ alias sk='brew services stop'
 alias sn='brew services start'
 alias sr='brew services restart'
 
+alias ga='git config --get-regexp "^alias\."'
+
 alias gi='gem install'
 alias gl='gem list --local --no-details | grep -v "default:"'
 alias gu='gem update && gem update --system'
@@ -96,7 +98,15 @@ alias br='bundle console'
 alias bs='bundle show'
 alias bu='bundle update'
 
-function mcd {
+function gw {
+  if [ -f gradlew ]; then
+    ./gradlew "${@}"
+  else
+    gradle "${@}"
+  fi
+}
+
+function mc {
   mkdir -pv "${1}" && cd "${1}"
 }
 
