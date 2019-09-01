@@ -40,6 +40,7 @@ alias dl='diskutil list'
 alias du='du -hd 1'
 alias g:='git'
 alias gr='grep -n'
+alias hi='fc -l'
 alias la='ls -Fhla'
 alias ll='ls -Fhl'
 alias ln='ln -sv'
@@ -103,6 +104,16 @@ function gw {
     ./gradlew "${@}"
   else
     gradle "${@}"
+  fi
+}
+
+function jv {
+  if [ ! -z "${1}" ]; then
+    export JAVA_HOME=$(/usr/libexec/java_home --version "${1}")
+    echo $(java -version)
+  else
+    echo $(/usr/libexec/java_home --verbose | grep ":")
+    echo $(java -version)
   fi
 }
 
