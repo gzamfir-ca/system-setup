@@ -1,0 +1,9 @@
+black==19.3b0
+bpython==0.18
+cookiecutter==1.6.0
+flake8==3.7.8
+pip==19.2.3
+pytest==5.1.2
+restview==2.9.2
+setuptools==41.2.0
+tox-venv==0.4.0
