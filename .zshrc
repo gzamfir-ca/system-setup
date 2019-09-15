@@ -32,18 +32,24 @@ alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../../'
 alias .6='cd ../../../../../../'
+alias bb='cd "${HOME}"/Bitbucket/'
 alias c.='code .'
 alias cl='clear'
 alias cp='cp -nv'
 alias ct='cat -et'
+alias dc='cd "${HOME}"/Documents/'
 alias dl='diskutil list'
+alias ds='cd "${HOME}"/Desktop/'
 alias du='du -hd 1'
+alias dw='cd "${HOME}"/Downloads/'
 alias g:='git'
+alias gh='cd "${HOME}"/GitHub/'
 alias gr='grep -n'
 alias hi='fc -l'
 alias i.='idea .'
 alias la='ls -Fhla'
 alias ll='ls -Fhl'
+alias lm='ls | less'
 alias ln='ln -sv'
 alias lt='ls -Fhlt'
 alias lr='ls -Fhltr'
@@ -100,12 +106,16 @@ alias br='bundle console'
 alias bs='bundle show'
 alias bu='bundle update'
 
-function gw {
-  if [ -f gradlew ]; then
-    ./gradlew "${@}"
+function cd {
+  if [ ! -z "${1}" ]; then
+    builtin cd "${1}" && la
   else
-    gradle "${@}"
+    builtin cd && la
   fi
+}
+
+function mc {
+  mkdir -pv "${1}" && builtin cd "${1}"
 }
 
 function jv {
@@ -118,8 +128,20 @@ function jv {
   fi
 }
 
-function mc {
-  mkdir -pv "${1}" && cd "${1}"
+function gw {
+  if [ -f gradlew ]; then
+    ./gradlew "${@}"
+  else
+    gradle "${@}"
+  fi
+}
+
+function mw {
+  if [ -f gradlew ]; then
+    ./mvnw "${@}"
+  else
+    mvn "${@}"
+  fi
 }
 
 eval "$(nodenv init -)"
