@@ -26,6 +26,9 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export GREP_COLOR='1;35'
 export GREP_OPTIONS='--color=auto'
 
+export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
+export ANT_OPTS="-Dant.logger.defaults=${HOME}/.ant/color.properties"
+
 alias .='cd ../'
 alias .2='cd ../../'
 alias .3='cd ../../../'
