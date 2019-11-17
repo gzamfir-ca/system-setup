@@ -41,15 +41,18 @@ alias cl='clear'
 alias cp='cp -nv'
 alias ct='cat -et'
 alias dc='cd "${HOME}"/Documents/'
+alias dh='cd "${HOME}"/DockerHub/'
+alias di='cd "${HOME}"/DockerImages/'
+alias dk='du -hd 1'
 alias dl='diskutil list'
 alias ds='cd "${HOME}"/Desktop/'
-alias du='du -hd 1'
 alias dw='cd "${HOME}"/Downloads/'
 alias g:='git'
 alias gh='cd "${HOME}"/GitHub/'
 alias gr='grep -n'
 alias hi='fc -l'
 alias i.='idea .'
+alias ip='cd "${HOME}"/IdeaProjects/'
 alias la='ls -Fhla'
 alias ll='ls -Fhl'
 alias lm='ls | less'
@@ -63,10 +66,14 @@ alias nv='env | sort'
 alias o.='open .'
 alias pg='less'
 alias rm='rm -iv'
-alias st='stat -x'
+alias st='cd "${HOME}"/Sourcetree/'
+alias sx='stat -x'
 alias tl='tail -n 50 -F'
 alias to='touch'
+alias tp='top -R -F -s 10 -o rsize'
 alias tr='tree'
+alias up='uptime'
+alias vm='cd "${HOME}"/VirtualMachines/'
 alias w+='chmod u+w'
 alias xt='exit'
 alias x+='chmod u+x'
@@ -121,6 +128,14 @@ function mc {
   mkdir -pv "${1}" && builtin cd "${1}"
 }
 
+function pd {
+  builtin pwd 
+}
+
+function pp {
+  ps "${@}" -u "${USER}" -o pid,%cpu,%mem,start,time,bsdtime,command ;
+}
+
 function jv {
   if [ ! -z "${1}" ]; then
     export JAVA_HOME=$(/usr/libexec/java_home --version "${1}")
@@ -133,14 +148,14 @@ function jv {
 
 function gw {
   if [ -f gradlew ]; then
-    ./gradlew "${@}"
+    ./gradlew --console=verbose "${@}"
   else
-    gradle "${@}"
+    gradle --console=verbose "${@}"
   fi
 }
 
 function mw {
-  if [ -f gradlew ]; then
+  if [ -f mvnw ]; then
     ./mvnw "${@}"
   else
     mvn "${@}"
