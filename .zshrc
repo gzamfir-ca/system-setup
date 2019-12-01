@@ -77,6 +77,8 @@ alias vm='cd "${HOME}"/VirtualMachines/'
 alias w+='chmod u+w'
 alias xt='exit'
 alias x+='chmod u+x'
+alias za='alias | less'
+alias zf='functions | less'
 
 alias ai='brew cask install --appdir="~/Applications" --verbose'
 alias al='brew cask list --versions'
