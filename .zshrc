@@ -169,5 +169,6 @@ eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 eval "$(opam env)"
 
+source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
