@@ -113,7 +113,7 @@ alias ou='opam update && opam upgrade'
 
 alias pi='pip3 install'
 alias pl='pip3 list --not-required'
-alias pu='pip3 list --outdated --format=freeze | cut -d = -f 1 | xargs -n1 pip3 install --upgrade'
+alias pu='pip3 list --not-required --outdated --format=freeze | cut -d = -f 1 | xargs -n1 pip3 install --upgrade'
 
 alias be='bundle exec '
 alias bi='bundle install'
@@ -165,6 +165,22 @@ function mw {
     ./mvnw "${@}"
   else
     mvn "${@}"
+  fi
+}
+
+function va {
+  if [ ! -z "${1}" ]; then
+    if [ -f "${1}"/pyenv.cfg ]; then
+      source "${1}"/bin/activate
+    else
+      python3 -m venv --system-site-packages "${1}" && source "${1}"/bin/activate
+    fi
+  fi
+}
+
+function vd {
+  if [ ! -z "${VIRTUAL_ENV}" ]; then
+    deactivate
   fi
 }
 
