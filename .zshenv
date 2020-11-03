@@ -5,7 +5,6 @@ export JAVA_HOME=$(/usr/libexec/java_home --version 1.8)
 
 export ANT_HOME="/usr/local/opt/ant/libexec"
 export CATALINA_HOME="/usr/local/opt/tomcat/libexec"
-export GLASSFISH_HOME="/usr/local/opt/payara/libexec/glassfish"
 export GRADLE_HOME="/usr/local/opt/gradle/libexec"
 export GROOVY_HOME="/usr/local/opt/groovy/libexec"
 export JBOSS_HOME="/usr/local/opt/wildfly-as/libexec"
