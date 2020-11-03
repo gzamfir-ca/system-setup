@@ -1,0 +1,17 @@
+christian-kohler.npm-intellisense
+CoenraadS.bracket-pair-colorizer
+dbaeumer.vscode-eslint
+Equinusocio.vsc-material-theme
+equinusocio.vsc-material-theme-icons
+esbenp.prettier-vscode
+hoovercj.haskell-linter
+joelday.docthis
+justusadam.language-haskell
+mkaufman.HTMLHint
+ms-azuretools.vscode-docker
+ms-vscode-remote.remote-containers
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-ssh-edit
+ndmitchell.haskell-ghcid
+rebornix.ruby
+wingrunr21.vscode-ruby

@@ -1,0 +1,41 @@
+{
+  "editor.fontFamily": "Dank Mono",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.formatOnSave": true,
+  "editor.tabCompletion": "on",
+  "editor.renameOnType": true,
+  "editor.renderWhitespace": "trailing",
+  "emmet.includeLanguages": {
+    "ejs": "html",
+    "erb": "html",
+    "jsp": "html",
+    "markdown": "html",
+    "vue-html": "html",
+    "plaintext": "jade",
+    "javascript": "javascriptreact",
+    "vue": "javascriptreact"
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "vue"],
+  "files.associations": {
+    "*.ejs": "html",
+    "*.jsp": "html"
+  },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 2000,
+  "git.path": "/usr/local/bin/git",
+  "haskell.hlint.executablePath": "/Users/george/.cabal/bin/hlint",
+  "haskell.hlint.run": "onType",
+  "ruby.codeCompletion": "rcodetools",
+  "ruby.format": "rubocop",
+  "ruby.intellisense": "rubyLocate",
+  "ruby.lint": { "rubocop": true },
+  "ruby.lintDebounceTime": 1000,
+  "terminal.external.osxExec": "iTerm2.app",
+  "terminal.integrated.fontSize": 14,
+  "workbench.colorTheme": "Material Theme Palenight",
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "workbench.statusBar.visible": true,
+  "workbench.activityBar.visible": true,
+  "workbench.startupEditor": "welcomePage"
+}
