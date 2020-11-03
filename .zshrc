@@ -20,6 +20,9 @@ autoload -U promptinit
 promptinit
 prompt pure
 
+path=("/usr/local/opt/make/libexec/gnubin" $path)
+path=("$HOME/.local/bin" $path)
+
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
@@ -35,24 +38,18 @@ alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../../'
 alias .6='cd ../../../../../../'
-alias bb='cd "${HOME}"/Bitbucket/'
+alias al='alias'
 alias c.='code .'
 alias cl='clear'
 alias cp='cp -nv'
 alias ct='cat -et'
-alias dc='cd "${HOME}"/Documents/'
-alias dh='cd "${HOME}"/DockerHub/'
-alias di='cd "${HOME}"/DockerImages/'
 alias dk='du -hd 1'
 alias dl='diskutil list'
-alias ds='cd "${HOME}"/Desktop/'
-alias dw='cd "${HOME}"/Downloads/'
 alias g:='git'
-alias gh='cd "${HOME}"/GitHub/'
+alias ga='git config --get-regexp "^alias\."'
 alias gr='grep -n'
 alias hs='fc -l'
 alias i.='idea .'
-alias ip='cd "${HOME}"/IdeaProjects/'
 alias la='ls -Fhla'
 alias ll='ls -Fhl'
 alias lm='ls | less'
@@ -67,61 +64,17 @@ alias o.='open .'
 alias p.='charm .'
 alias pg='less'
 alias rm='rm -iv'
-alias st='cd "${HOME}"/Sourcetree/'
 alias sx='stat -x'
 alias tl='tail -n 50 -F'
 alias to='touch'
 alias tp='top -R -F -s 10 -o rsize'
 alias tr='tree'
 alias up='uptime'
-alias vm='cd "${HOME}"/VirtualMachines/'
 alias w+='chmod u+w'
 alias xt='exit'
 alias x+='chmod u+x'
 alias za='alias | less'
 alias zf='functions | less'
-
-alias ai='brew cask install --appdir="~/Applications" --verbose'
-alias al='brew cask list --versions'
-alias au='brew update --verbose && brew cask upgrade --verbose && brew cleanup --verbose'
-
-alias ei='brew install --verbose'
-alias el='brew list --versions $(brew leaves)'
-alias eu='brew update --verbose && brew upgrade --verbose && brew cleanup --verbose'
-
-alias sl='brew services list'
-alias sk='brew services stop'
-alias sn='brew services start'
-alias sr='brew services restart'
-
-alias ga='git config --get-regexp "^alias\."'
-
-alias gi='gem install'
-alias gl='gem list --local --no-details | grep -v "default:"'
-alias gu='gem update && gem update --system'
-
-alias hi='cabal install'
-alias hl='cabal list --installed --simple-output'
-alias hu='cabal update'
-
-alias mi='npm install --global'
-alias ml='npm list --global --depth 0'
-alias mu='npm update --global && npm dedupe --global'
-
-alias oi='opam install'
-alias ol='opam list'
-alias ou='opam update && opam upgrade'
-
-alias pi='pip3 install'
-alias pl='pip3 list --not-required'
-alias pu='pip3 list --not-required --outdated --format=freeze | cut -d = -f 1 | xargs -n1 pip3 install --upgrade'
-
-alias be='bundle exec '
-alias bi='bundle install'
-alias bo='bundle outdated'
-alias br='bundle console'
-alias bs='bundle show'
-alias bu='bundle update'
 
 function cd {
   if [ ! -z "${1}" ]; then
@@ -143,7 +96,35 @@ function pp {
   ps "${@}" -u "${USER}" -o pid,%cpu,%mem,start,time,bsdtime,command ;
 }
 
-function jv {
+alias bci='brew install --cask --appdir="~/Applications" --verbose'
+alias bcl='brew list --cask --versions'
+alias bcu='brew update --verbose && brew upgrade --cask --verbose && brew cleanup --verbose'
+
+alias bri='brew install --verbose'
+alias brl='brew list --versions $(brew leaves)'
+alias bru='brew update --verbose && brew upgrade --verbose && brew cleanup --verbose'
+
+alias bsl='brew services list'
+alias bsk='brew services stop'
+alias bsn='brew services start'
+alias bsr='brew services restart'
+
+alias ppi='pip3 install'
+alias ppl='pip3 list --not-required'
+alias ppu='pip3 list --not-required --outdated --format=freeze | cut -d = -f 1 | xargs -n1 pip3 install --upgrade'
+alias ppx='python3 -m pip '
+
+alias pxi='pipx install'
+alias pxl='pipx list'
+alias pxu='pipx upgrade-all'
+alias pxx='pipx run '
+
+alias rbi='bundle install'
+alias rbl='bundle list'
+alias rbu='bundle update'
+alias rbx='bundle exec '
+
+function jvh {
   if [ ! -z "${1}" ]; then
     export JAVA_HOME=$(/usr/libexec/java_home --version "${1}")
     echo $(java -version)
@@ -153,7 +134,7 @@ function jv {
   fi
 }
 
-function gw {
+function jgw {
   if [ -f gradlew ]; then
     ./gradlew --console=verbose "${@}"
   else
@@ -161,7 +142,7 @@ function gw {
   fi
 }
 
-function mw {
+function jmw {
   if [ -f mvnw ]; then
     ./mvnw "${@}"
   else
@@ -169,17 +150,17 @@ function mw {
   fi
 }
 
-function va {
+function pva {
   if [ ! -z "${1}" ]; then
     if [ -f "${1}"/pyenv.cfg ]; then
       source "${1}"/bin/activate
     else
-      python3 -m venv --system-site-packages "${1}" && source "${1}"/bin/activate
+      python3 -m venv "${1}" && source "${1}"/bin/activate
     fi
   fi
 }
 
-function vd {
+function pvd {
   if [ ! -z "${VIRTUAL_ENV}" ]; then
     deactivate
   fi
