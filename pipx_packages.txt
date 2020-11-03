@@ -1,0 +1,13 @@
+venvs are in /Users/george/.local/pipx/venvs
+apps are exposed on your $PATH at /Users/george/.local/bin
+   package black 20.8b1, Python 3.9.0
+    - black
+    - black-primer
+    - blackd
+   package flake8 3.8.4, Python 3.9.0
+    - flake8
+   package ipython 7.19.0, Python 3.9.0
+    - iptest
+    - iptest3
+    - ipython
+    - ipython3
