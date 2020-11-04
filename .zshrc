@@ -73,8 +73,6 @@ alias up='uptime'
 alias w+='chmod u+w'
 alias xt='exit'
 alias x+='chmod u+x'
-alias za='alias | less'
-alias zf='functions | less'
 
 function cd {
   if [ ! -z "${1}" ]; then
